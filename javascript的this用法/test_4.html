@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// new绑定
+function foo(a,b) {
+	this.a = 10;
+	console.log(this);
+				// body...
+}
+
+var obj = new foo();
+console.log(obj.a);
+
+
+
+
+
+
+
+</script>
+	
+</body>
+</html>

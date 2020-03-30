@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script type="text/javascript">
+// 隐性绑定
+function foo() {
+	var a =1;
+	console.log(this.a);
+				// body...
+}
+
+var obj ={
+	a:1,
+	foo
+
+}
+foo();	
+obj.foo();
+
+
+</script>
+	
+</body>
+</html>
