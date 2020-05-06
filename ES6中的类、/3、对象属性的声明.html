@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!--  -->
+
+    <script>
+      class User {
+        site = "biadu"; //定义对象的属性第一总方法
+        constructor(name) {
+          this.name = name; //定义对象的属性第二种方法
+        }
+        show() {
+          console.log(this.site + ":" + this.name);
+        }
+      }
+      let hd = new User("666");
+      hd.show();
+    </script>
+  </body>
+</html>

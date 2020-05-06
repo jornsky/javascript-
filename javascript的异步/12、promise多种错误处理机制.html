@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Promise多种错误捕捉
+      // 通常末尾可以catch统一处理
+
+      console.log(
+        new Promise((resolve, reject) => {
+          // resolve("成功状态");
+          // reject("失败")
+          // reject(new Error("fail"));
+          // throw new Error("fail");
+          // hd  +1
+        })
+          .then(
+            (value) => {
+              console.log("成功的业务处理 1");
+            },
+            (reason) => {
+              console.log("拒绝的业务处理");
+            }
+          )
+          .catch((error) => {})
+      );
+    </script>
+  </body>
+</html>

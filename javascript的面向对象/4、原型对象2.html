@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+       *
+       *  创建构造函数
+       */
+
+      function MyClasss() {}
+
+      MyClasss.prototype.name = "原型中的name";
+      var mc = new MyClasss();
+
+      console.log(mc.name);
+
+      console.log("name" in mc); //true
+      // hasOwnProperty检查自生是否含有该属性
+      mc.hasOwnProperty("name"); //true
+
+      mc.hasOwnProperty("hasOwnProperty"); //false
+
+      mc.__proto__.hasOwnProperty("hasOwnProperty"); //false
+
+      /*
+       *  原型对象也是对象那个，所以他也有原型
+       * 当我们使用一个属性时，如果自身没有，它会在原型的原型对象中查找
+       *    如果还是没有 它会一直往上找 直接找到Object的原型 它也没有 就返回undefine
+       */
+    </script>
+  </body>
+</html>

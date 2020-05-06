@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+    *    解析器在调用函数的每次都会想函数的内部床底一个隐含的参数
+          这个隐含的参数就是this this指向那个对象
+    *     这个对象称为函数执行的上下文
+          更具函数的调用方式的不同this指向不同的对象
+              1  以函数调用时候，this指向window，
+              2  以方法调用 指向的是那个对象
+    */
+
+      function fun(a, b) {
+        console.log(this);
+      }
+      fun(1, 2);
+
+      var obj = {
+        name: "sun",
+        sayname: fun,
+      };
+      obj.sayname();
+      console.log();
+    </script>
+  </body>
+</html>

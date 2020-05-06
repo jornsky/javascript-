@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+       *
+       *  创建构造函数
+       */
+
+      function Person(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+      }
+
+      var per = new Person("孙", 18, "男");
+      per.toString = function () {
+        return "我是toString";
+      };
+      var result = per.toString();
+
+      console.log(result);
+    </script>
+  </body>
+</html>

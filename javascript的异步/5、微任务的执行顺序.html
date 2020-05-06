@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 1 任务优先级别 最高的是同步任务  
+         2  promise than之前是和同步一个级别的 
+         3  微任务是在同步任务之后的-->
+
+    <script>
+      setTimeout(() => {
+        console.log("timeout");
+      }, 0);
+
+      new Promise((resolve) => {
+        resolve();
+        console.log("promise");
+      }).then((value) => {
+        console.log("then");
+      });
+
+      console.log("doc");
+    </script>
+  </body>
+</html>

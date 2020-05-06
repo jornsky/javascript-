@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      list = [];
+      async function pro() {
+        // let name = await "11111"; //await 类似于then
+        return await $.ajax({
+          type: "GET",
+          contentType: "application/json;charset=UTF-8",
+          url: "apv.catpuzi.com",
+          data: JSON.stringify(list),
+        });
+      }
+
+      pro().catch((v) => {
+        console.log(v + "1111111");
+      });
+    </script>
+  </body>
+</html>

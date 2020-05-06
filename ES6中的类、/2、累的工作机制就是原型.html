@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 原理分析 -->
+
+    <script>
+      // constructor 用于定义函数代码，下面是与普通函数的对比，结构是一致的
+      class User {}
+      console.log(typeof User); //function
+
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+        show() {}
+      }
+      console.dir(User);
+      console.log(User == User.prototype.constructor); //true
+
+      //下面是对比的普通函数
+      function Hd(name) {
+        this.name = name;
+      }
+      console.dir(Hd);
+      console.log(Hd == Hd.prototype.constructor); //true
+
+      //在类中定义的方法也保存在函数原型中
+      class User1 {
+        constructor(name) {
+          this.name = name;
+        }
+        show() {}
+      }
+      console.dir(User1);
+      console.log(Object.getOwnPropertyNames(User.prototype)); //["constructor", "show"]
+
+      // 所以下面定义的类  与下面使用函数的定义是一致的
+      class User {
+        constructor(name) {
+          this.name = name;
+        }
+        show() {
+          console.log(this.name);
+        }
+      }
+
+      function User(name) {
+        this.name = name;
+      }
+      Hd.prototype.show = function () {
+        console.log(this.name);
+      };
+    </script>
+  </body>
+</html>

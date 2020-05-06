@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+  </head>
+  <body>
+    <!---->
+    <!-- ajax -->
+    <script>
+      list = [];
+      function requesat() {
+        return new Promise((resolve, reject) => {
+          // ajax耗时请求
+
+          $.ajax({
+            type: "GET",
+            // contentType: "application/json;charset=UTF-8",
+            url: "http://api.com",
+            data: JSON.stringify(list),
+            success: function (result) {
+              resolve(result);
+            },
+            error: function (result) {
+              reject(result);
+            },
+          });
+        });
+      }
+
+      requesat().then(
+        (value) => {
+          console.log(value);
+        },
+        (reason) => {
+          console.log("reason" + reason);
+        }
+      );
+    </script>
+  </body>
+</html>

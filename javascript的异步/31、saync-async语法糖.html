@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // async 的语法糖
+      new Promise((resolve) => {
+        resolve("222");
+      }).then((v) => {
+        console.log(v);
+      });
+
+      async function pro() {
+        // let name = await "11111"; //await 类似于then
+        let name = await new Promise((resolve) => {
+          resolve("我是在async函数中的返回的promise");
+        });
+
+        let site = await new Promise((resolve) => {
+          resolve("我是在22222async函数中的返回的promise");
+        });
+
+        console.log(site);
+        console.log(name);
+      }
+
+      pro();
+
+      // console.log(pro()); //返回一个Promise 解决的 {<resolved>: undefined}
+      // pro().then((v) => {
+      //   console.log(v); //结果是上面的feiji
+      // });
+    </script>
+  </body>
+</html>

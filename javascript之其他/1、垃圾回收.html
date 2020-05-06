@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /***
+          GC垃圾回收
+          我们需要有一个垃圾回收机制，来处理程序运行中产生的垃圾
+          当一个对象没有任何变量和属性对他进行引用，我们永远无法用用它了
+          - 在JS中有着自动的垃圾回收机制 会自动将这些来及对象从内存中销毁
+          我们不需要也不能进行垃圾回收的操作
+          我们要做的就是将 对象设置为null
+      
+      *****/
+
+      var obj = new Object();
+      //对象各种操作
+
+      obj = null;
+    </script>
+  </body>
+</html>

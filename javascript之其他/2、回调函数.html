@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <button id="btn">测试点击事件</button>
+  </head>
+  <body>
+    <script>
+      // 什么函数才是回调函数
+
+      // 常见的回调函数
+      //1 定时器回调函数
+      //2 dom回调函数
+      //3 ajax回调
+      //3 生命周期回调函数
+
+      document.getElementById("btn").onclick = function () {
+        //dom回调函数
+        alert(this.innerHTML);
+      };
+
+      // 定时器
+      // 超时
+      // 循环
+      setTimeout(function () {
+        //定时器回调函数
+        alert("时间到了");
+      }, 2000);
+    </script>
+  </body>
+</html>

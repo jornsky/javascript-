@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+       ** 创建一个Person构造函数
+       方法是在构造函数内部创建的，每次new一个就会新创建一个sayname方法
+       这样就会导致执行10000次会创建10000个新方法 完全没有必要 可以试用共享同一个方法
+       */
+
+      function Person(name, age, gender) {
+        this.name = name;
+        this.age = age;
+        this.gender = gender;
+        this.sayName = function () {
+          alert("我是" + this.name);
+        };
+      }
+
+      var per = new Person("孙", 18, "男");
+      var per2 = new Person("朱八戒", 22, "男");
+      per.sayName();
+      per2.sayName();
+    </script>
+  </body>
+</html>

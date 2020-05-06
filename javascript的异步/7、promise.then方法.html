@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!---->
+    <!-- promise的then方法   -->
+    <!-- 如果没有写resolve 或 reject promise 不会有任何反映 
+        如果有嵌套的then 会一直传递下去 -->
+    <script>
+      let promise = new Promise((resolve) => {
+        resolve("一瓶可乐");
+      }).then(
+        (value) => {
+          console.log(value);
+        },
+        (reason) => {
+          console.log(reason);
+        }
+      );
+    </script>
+  </body>
+</html>

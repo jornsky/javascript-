@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      function interval(callback, delay = 100) {
+        let id = setInterval(() => callback(id), delay);
+      }
+
+      // interval((timeId) => {
+      //   const div = document.querySelector("div");
+      //   let left = parseInt(window.getComputedStyle(div).left);
+      //   console.log(left);
+      // });
+
+      // 每隔一秒执行 每个一秒从任务的队列中调取
+      // 定时器设置的时间不一定是真的间隔时间，得当前主线程的任务结束后才能执行其他任务
+      interval(function (id) {
+        console.log(id);
+      }, 1000);
+    </script>
+  </body>
+</html>

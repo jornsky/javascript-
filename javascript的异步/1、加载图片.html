@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //图片没加载完结 hi就出来了 主线程没有任务了 从任务队列中轮训任务加载 这个过程是不停地
+      function LoadIma(src, resolve, reject) {
+        let image = new Image();
+        image.src = src;
+        image.onload = resolve;
+        image.onerror = reject;
+      }
+      LoadIma(
+        "",
+        () => {
+          console.log("加载完成！");
+        },
+        () => {
+          console.log("加载 失败！");
+        }
+      );
+      console.log("hi");
+    </script>
+  </body>
+</html>

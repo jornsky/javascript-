@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.js"></script>
+  </head>
+  <body>
+    <script>
+      // ajax也是异步操作
+      //在请求成功后 成功的回调函数中在次异步 这样就形成了 回调地狱 代码非常的不美观所以就有了promise
+      var list = {};
+      //
+      $.ajax({
+        type: "GET",
+        contentType: "application/json;charset=UTF-8",
+        url: "?question=天下",
+        data: JSON.stringify(list),
+        success: function (result) {
+          console.log(result);
+          $.ajax({
+            type: "GET",
+            contentType: "application/json;charset=UTF-8",
+            url: "hquestion=天下",
+            data: JSON.stringify(list),
+            success: function (result) {
+              console.log(result);
+              $.ajax({
+                type: "GET",
+                contentType: "application/json;charset=UTF-8",
+                url: "iku3?question=天下",
+                data: JSON.stringify(list),
+                success: function (result) {
+                  console.log(result);
+                },
+              });
+            },
+          });
+        },
+      });
+    </script>
+  </body>
+</html>

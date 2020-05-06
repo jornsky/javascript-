@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // pedding  准备阶段
+      // resolved 成功状态
+      // reject 失败状态
+      // 从原理来说 promise有一个微任务队列 之前的任务队列说的是宏任务队列
+      // js会对微任务队列 优先执行
+      console.log(
+        new Promise((resolve, reject) => {
+          resolve("成功状态");
+        })
+          .then(
+            (value) => {
+              console.log("成功的业务处理 1");
+            },
+            (reason) => {
+              console.log("拒绝的业务处理");
+            }
+          )
+          .then(
+            (value) => {
+              console.log("成功的业务处理 2");
+            },
+            (reason) => {
+              console.log("拒绝的业务处理");
+            }
+          )
+      );
+    </script>
+  </body>
+</html>
