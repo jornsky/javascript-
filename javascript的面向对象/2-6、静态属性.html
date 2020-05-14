@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // class定义类
+      class User {
+        // class的静态属性定义方法
+        static host = "http://www.baidu.com";
+      }
+
+      class Person {
+        site = "catpuzi";
+        constructor(title) {
+          this.title = title;
+        }
+        show() {}
+
+        get() {}
+      }
+
+      let p = new Person("xjf");
+
+      p.get();
+
+      function Web(url) {
+        this.url = url;
+      }
+      // 定义在构造函数上的是静态属性
+
+      Web.url = "cat2";
+      console.log(Web.url);
+      console.dir(Web);
+
+      let w = new Web("cat");
+    </script>
+  </body>
+</html>

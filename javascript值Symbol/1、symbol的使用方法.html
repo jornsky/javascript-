@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let data1 = Symbol("data1"); //描述 是data1
+      let data2 = Symbol("data2");
+      console.log(data1 == data2);
+
+      console.log(data1.description);
+
+      let data3 = Symbol.for("data3");
+      console.log(data3.description);
+    </script>
+  </body>
+</html>

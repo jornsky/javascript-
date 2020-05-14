@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // new
+      const date = new Date();
+      console.log(date);
+      console.log(date * 1); //返回时间戳
+
+      const date1 = Date();
+      console.log(date1);
+
+      const date3 = Date.now();
+      console.log("Date.now", Date.now);
+
+      console.time("for");
+
+      console.timeEnd("for");
+
+      const date4 = new Date("1990-3-21 4:22:18");
+    </script>
+  </body>
+</html>

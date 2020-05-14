@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class定义类
+      class User {}
+
+      console.log(typeof User);
+      console.dir(User);
+      console.log(User === User.prototype.constructor);
+
+      class Person {
+        //类似在函数定义对象的形参中定义title
+        constructor(title) {
+          this.title = title;
+        }
+        //方法就在原型当中定义
+        show() {}
+
+        get() {}
+      }
+
+      console.dir(Person);
+
+      let p = new Person("xjf");
+      console.log(Object.getOwnPropertyNames(Person.prototype));
+
+      console.log(Object.getOwnPropertyNames(p));
+
+      p.get();
+    </script>
+  </body>
+</html>

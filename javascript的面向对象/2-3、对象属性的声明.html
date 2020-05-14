@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class定义类
+      class User {}
+
+      class Person {
+        //对象属性声明方法二
+        site = "catpuzi";
+        //1、对象属性的声明方法一
+        constructor(title) {
+          this.title = title;
+        }
+        //
+        show() {}
+
+        get() {}
+      }
+
+      console.dir(Person);
+
+      let p = new Person("xjf");
+
+      p.get();
+    </script>
+  </body>
+</html>

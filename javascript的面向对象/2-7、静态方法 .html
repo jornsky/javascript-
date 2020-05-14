@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      "use strict";
+      // class定义类
+      class User {}
+
+      class Person {
+        constructor(title) {
+          this.title = title;
+        }
+        show() {
+          console.log();
+        }
+        //class中定义静态方法
+        static get() {}
+      }
+
+      let p = new Person("xjf");
+
+      p.get();
+
+      function Web(url) {
+        //对象上定义方法
+        this.show = function () {};
+      }
+      //原型上定义方法
+      Web.prototype.show2 = function () {};
+
+      console.dir(Web);
+      //直接在函数对象上定义的是 静态方法
+      Web.show3 = function () {};
+
+      let w = new Web("cat");
+    </script>
+  </body>
+</html>
